@@ -1,0 +1,21 @@
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    </head>
+<body>
+    <input type="text" name="texto" th:value="${textoSelecionado}">
+    <select name="cargo"> 
+        <option value  = "" th:select="${CargoSelecionado == ''}">Todos</option>
+        <option th:each="c : ${Cargos}"
+            th:value="${c}"
+            th:text="${c}"
+            th:selected = "${c == cargoSelecionado}"></option>
+    </select>
+    <div class="card" th:each="cand : ${candidatos}">
+        <img th:src="@{'/images/candidatos/' + ${cand.nomeArquivoFoto}}" 
+th:alt="${cand.nomeUrna}" class="foto-candidato"> 
+        <th:text>cargo</th:text>
+        <th:tex>urna</th:tex>
+        <th:tex>cargo</th:tex>
+</body>
